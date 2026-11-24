@@ -4,170 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dein Weg. Dein Abschluss. – Berufskolleg Rheydt-Mülfort</title>
-<meta name="description" content="Welcher Bildungsgang passt zu dir? Der Schulberater des Berufskollegs Rheydt-Mülfort in Mönchengladbach zeigt dir deinen Weg – vom Ersten Schulabschluss bis zur Fachhochschulreife.">
+<meta name="description" content="Mit welchem Schulabschluss kommst du zu uns? Finde deinen Bildungsgang am Berufskolleg Rheydt-Mülfort in Mönchengladbach.">
 <link rel="icon" href="assets/icon-abschluss.png">
-<style>
-:root{
-  --navy:#0d0c5e; --blue:#1673c8; --teal:#14708c; --purple:#3a3aa0;
-  --bg:#eef0f5; --card:#fff; --text:#1b1d3a; --muted:#5a5f7a; --line:#dde1ea;
-  --radius:14px; --shadow:0 4px 18px rgba(13,12,94,.08);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.5;-webkit-text-size-adjust:100%}
-img{max-width:100%;display:block}
-a{color:var(--blue)}
-.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
-.topbar{background:var(--navy);color:#fff;font-size:.82rem;padding:6px 0}
-.topbar a{color:#fff;text-decoration:none}
-header.logo{background:#fff;padding:14px 0;border-bottom:1px solid var(--line)}
-header.logo .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
-header.logo img{height:52px;width:auto}
-nav.quick{display:flex;gap:14px;flex-wrap:wrap;font-size:.9rem;font-weight:600}
-nav.quick a{text-decoration:none;color:var(--navy)}
-@media (max-width:720px){nav.quick{display:none}}
-
-.hero{background:var(--blue);color:#fff;padding:44px 0 52px}
-.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;font-weight:700;opacity:.9;margin:0 0 8px}
-.hero h1{font-size:clamp(2.4rem,8vw,4rem);line-height:1.02;margin:0 0 16px;font-weight:800}
-.hero p.lead{font-size:clamp(1.05rem,3vw,1.3rem);font-weight:600;max-width:640px;margin:0 0 24px}
-.btn{display:inline-block;background:#fff;color:var(--navy);font-weight:700;padding:12px 20px;border-radius:10px;text-decoration:none;border:0;cursor:pointer;font-size:1rem}
-.btn.dark{background:var(--navy);color:#fff}
-.btn.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7)}
-.btn + .btn{margin-left:8px}
-.hero .btns{display:flex;flex-wrap:wrap;gap:10px}
-.hero .btn + .btn{margin-left:0}
-
-section{padding:48px 0}
-section h2{font-size:clamp(1.6rem,5vw,2.2rem);color:var(--navy);margin:0 0 8px;line-height:1.15}
-section .sub{color:var(--muted);margin:0 0 24px}
-.eyebrow.c{color:var(--blue);opacity:1}
-
-/* Schulberater */
-#berater{background:#fff}
-.choices{display:grid;gap:12px;grid-template-columns:1fr}
-@media (min-width:720px){.choices{grid-template-columns:1fr 1fr}}
-.choice{all:unset;box-sizing:border-box;cursor:pointer;display:flex;gap:14px;align-items:center;background:var(--bg);border-radius:var(--radius);padding:16px 18px;border-left:6px solid var(--c);transition:transform .12s, box-shadow .12s}
-.choice:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-.choice:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
-.choice[aria-pressed="true"]{background:var(--c);color:#fff}
-.choice[aria-pressed="true"] small{color:rgba(255,255,255,.85)}
-.choice .num{flex:none;width:40px;height:40px;border-radius:50%;background:var(--c);color:#fff;display:grid;place-items:center;font-weight:800}
-.choice[aria-pressed="true"] .num{background:#fff;color:var(--c)}
-.choice b{display:block;font-size:1.05rem}
-.choice small{color:var(--muted)}
-.hint{font-size:.9rem;color:var(--muted);margin-top:14px}
-
-.result{margin-top:28px;display:none}
-.result.show{display:block;animation:fade .35s ease}
-@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.arrow-line{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--navy);margin-bottom:14px;flex-wrap:wrap}
-.arrow-line .pill{background:var(--bg);padding:6px 12px;border-radius:999px}
-.arrow-line .pill.to{background:var(--c);color:#fff}
-
-/* Bildungsgang-Karte */
-.bg-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;border-top:6px solid var(--c)}
-.bg-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;padding:22px 22px 6px}
-.bg-head h3{margin:2px 0 4px;font-size:1.6rem;color:var(--navy);line-height:1.15}
-.bg-head p{margin:0;color:var(--muted)}
-.bg-head>div:first-child{min-width:0}
-.bg-head h3{hyphens:auto;overflow-wrap:break-word}
-@media (max-width:420px){.bg-head h3{font-size:1.35rem}.badge{padding:8px 10px;font-size:.95rem}}
-.badge{flex:none;background:var(--c);color:#fff;font-weight:800;border-radius:10px;padding:10px 14px;font-size:1.1rem}
-.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:16px 22px}
-@media (max-width:600px){.facts{grid-template-columns:1fr}}
-.fact{border-top:3px solid var(--c);background:var(--bg);border-radius:8px;padding:10px 12px}
-.fact span{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
-.fact b{color:var(--navy)}
-.bg-body{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;padding:6px 22px 22px}
-@media (max-width:720px){.bg-body{grid-template-columns:1fr}}
-.bg-body h4{margin:6px 0 8px;color:var(--navy)}
-.bg-body ul{margin:0;padding-left:20px}
-.bg-body li{margin:4px 0}
-.next{background:var(--c);color:#fff;border-radius:12px;padding:16px 18px}
-.next h4{color:#fff;margin-top:0}
-.next p{margin:0}
-.bg-actions{padding:0 22px 22px;display:flex;gap:10px;flex-wrap:wrap}
-.bg-actions .btn + .btn{margin-left:0}
-.btn.outline{background:#fff;color:var(--navy);border:2px solid var(--navy)}
-
-/* Wer wir sind */
-.cards3{display:grid;gap:14px;grid-template-columns:1fr}
-@media (min-width:720px){.cards3{grid-template-columns:repeat(3,1fr)}}
-.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;border-top:4px solid var(--navy)}
-.card img{width:44px;height:44px;margin-bottom:12px}
-.card h3{margin:0 0 6px;color:var(--navy);font-size:1.1rem}
-.card p{margin:0;color:var(--muted)}
-
-/* Treppe */
-.stairs{display:grid;gap:10px}
-.step{display:flex;align-items:center;gap:14px;background:var(--c);color:#fff;border-radius:12px;padding:14px 18px;text-decoration:none}
-.step b{font-size:1.05rem}
-.step span{opacity:.9}
-.step .lvl{flex:none;font-weight:800;background:rgba(255,255,255,.18);border-radius:8px;padding:4px 10px}
-@media (min-width:720px){.step:nth-child(2){margin-left:6%}.step:nth-child(3){margin-left:12%}.step:nth-child(4){margin-left:18%}.step:nth-child(5){margin-left:24%}}
-.note{background:#fff;border-left:5px solid var(--blue);border-radius:10px;padding:14px 16px;margin-top:18px}
-
-#bildungsgaenge .bg-card{margin-bottom:22px;scroll-margin-top:16px}
-
-/* Berufe */
-.jobs{display:grid;gap:10px;grid-template-columns:1fr 1fr}
-@media (min-width:720px){.jobs{grid-template-columns:repeat(3,1fr)}}
-.job{background:#fff;border-radius:10px;padding:14px;font-weight:700;color:var(--navy);box-shadow:var(--shadow)}
-
-/* Anmeldung */
-.reg{display:grid;gap:22px;grid-template-columns:1fr}
-@media (min-width:800px){.reg{grid-template-columns:1.6fr 1fr}}
-.regstep{display:flex;gap:14px;margin-bottom:16px}
-.regstep .n{flex:none;width:38px;height:38px;border-radius:8px;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800}
-.regstep h3{margin:0 0 2px;font-size:1.05rem;color:var(--navy)}
-.regstep p{margin:0;color:var(--muted)}
-
-/* Präsentation */
-.viewer{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:12px}
-.viewer img{width:100%;border-radius:8px;aspect-ratio:16/9;object-fit:contain;background:var(--bg)}
-.vctrl{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px}
-.vctrl button{all:unset;cursor:pointer;background:var(--navy);color:#fff;border-radius:8px;padding:8px 16px;font-weight:700}
-.vctrl button:focus-visible{outline:3px solid var(--blue)}
-.dl{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-.dl .btn + .btn{margin-left:0}
-
-/* Kontakt */
-#kontakt{background:var(--navy);color:#fff}
-#kontakt h2{color:#fff}
-#kontakt a{color:#fff}
-.contact{display:grid;gap:10px;font-size:1.1rem}
-footer{background:#07063d;color:rgba(255,255,255,.75);font-size:.85rem;padding:16px 0}
-footer a{color:#fff}
-</style>
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-
 <div class="topbar"><div class="wrap"><a href="tel:+492166917920">02166-917920</a> | <a href="mailto:info@berufskolleg.biz">info@berufskolleg.biz</a></div></div>
 <header class="logo"><div class="wrap">
-  <a href="https://www.berufskolleg.biz"><img src="assets/logo.png" alt="Berufskolleg Rheydt-Mülfort – für Wirtschaft und Verwaltung" width="655" height="217"></a>
-  <nav class="quick">
-    <a href="#berater">Schulberater</a><a href="#bildungsgaenge">Bildungsgänge</a><a href="#anmeldung">Anmeldung</a><a href="#praesentation">Präsentation</a><a href="#kontakt">Kontakt</a>
-  </nav>
+  <a href="index.html"><img src="assets/logo.png" alt="Berufskolleg Rheydt-Mülfort – für Wirtschaft und Verwaltung" width="655" height="217"></a>
+  <nav class="quick"><a href="#wir">Über uns</a><a href="#anmeldung">Anmeldung</a><a href="#praesentation">Präsentation</a><a href="#kontakt">Kontakt</a></nav>
 </div></header>
 
-<section class="hero"><div class="wrap">
+<section class="hero start"><div class="wrap">
   <p class="eyebrow">Berufskolleg Rheydt-Mülfort</p>
-  <h1>Dein Weg.<br>Dein Abschluss.</h1>
-  <p class="lead">Deine Wege am Berufskolleg Rheydt-Mülfort – vom ersten Abschluss bis zur Fachhochschulreife.</p>
-  <div class="btns">
-    <a class="btn" href="#berater">Welcher Bildungsgang passt zu mir?</a>
-    <a class="btn ghost" href="#praesentation">Präsentation ansehen</a>
-  </div>
-</div></section>
-
-<section id="berater"><div class="wrap">
-  <p class="eyebrow c">Dein Schulberater</p>
-  <h2>Welchen Abschluss hast du – oder bekommst du im Sommer?</h2>
-  <p class="sub">Tippe auf deinen Abschluss. Wir zeigen dir, welcher Bildungsgang zu dir passt.</p>
-  <div class="choices" id="choices"></div>
-  <p class="hint">Du bist unsicher? Ruf uns an unter <a href="tel:+492166917920">02166-917920</a> – wir beraten dich gern, auch direkt an deiner Schule.</p>
-  <div class="result" id="result" aria-live="polite"></div>
+  <h1>Dein Weg. Dein Abschluss.</h1>
+  <h2>Mit welchem Schulabschluss kommst du zu uns?</h2>
+  <p class="sub">Wähle deinen Abschluss – oder den, den du im Sommer bekommst.</p>
+  <div class="choices">
+    <a class="choice" style="--c:#14708c" href="av.html"><span class="num">1</span>
+      <span><b>Noch keinen Abschluss</b><small>Schulpflicht in der Sek. I erfüllt</small><span class="to">→ Ausbildungsvorbereitung</span></span><span class="go" aria-hidden="true">›</span></a>
+    <a class="choice" style="--c:#1673c8" href="bfs1.html"><span class="num">2</span>
+      <span><b>Erster Schulabschluss</b><small>früher: Hauptschulabschluss nach Klasse 9</small><span class="to">→ Berufsfachschule 1</span></span><span class="go" aria-hidden="true">›</span></a>
+    <a class="choice" style="--c:#3a3aa0" href="bfs2.html"><span class="num">3</span>
+      <span><b>Erweiterter Erster Schulabschluss</b><small>früher: Hauptschulabschluss nach Klasse 10</small><span class="to">→ Berufsfachschule 2</span></span><span class="go" aria-hidden="true">›</span></a>
+    <a class="choice" style="--c:#0d0c5e" href="hoehere-berufsfachschule.html"><span class="num">4</span>
+      <span><b>Mittlerer Schulabschluss (FOR)</b><small>oder Versetzung in die Oberstufe (Gymnasium)</small><span class="to">→ Höhere Berufsfachschule</span></span><span class="go" aria-hidden="true">›</span></a>
+    </div>
+  <p class="hint" style="color:rgba(255,255,255,.9)">Du bist unsicher? Ruf uns an unter <a style="color:#fff" href="tel:+492166917920">02166-917920</a> – wir beraten dich gern.</p>
 </div></section>
 
 <section id="wir"><div class="wrap">
@@ -185,40 +48,29 @@ footer a{color:#fff}
   <p class="eyebrow c">Entwicklungsmöglichkeiten</p>
   <h2>Schritt für Schritt nach oben</h2>
   <p class="sub">Tippe auf eine Stufe, um mehr zu erfahren.</p>
-  <div class="stairs" id="stairs"></div>
+  <div class="stairs"><a class="step" style="--c:#14708c" href="av.html"><span class="lvl">AV</span><span><b>Ausbildungsvorbereitung</b><br><span>→ Erster Schulabschluss</span></span></a><a class="step" style="--c:#1673c8" href="bfs1.html"><span class="lvl">BFS 1</span><span><b>Berufsfachschule 1 (Handelsschule HS 9)</b><br><span>→ Erweiterter Erster Schulabschluss</span></span></a><a class="step" style="--c:#3a3aa0" href="bfs2.html"><span class="lvl">BFS 2</span><span><b>Berufsfachschule 2 (Handelsschule HS 10)</b><br><span>→ Mittlerer Schulabschluss (FOR)</span></span></a><a class="step" style="--c:#0d0c5e" href="hoehere-berufsfachschule.html"><span class="lvl">HBFS</span><span><b>Höhere Berufsfachschule (Höhere Handelsschule)</b><br><span>→ Fachhochschulreife (schulischer Teil)</span></span></a><a class="step" style="--c:#2f8a4e" href="#berufe"><span class="lvl">🎓</span><span><b>Ausbildung oder Studium</b><br><span>Kaufmännische Ausbildung oder Fachhochschule</span></span></a></div>
   <p class="note"><b>Reibungsloser Übergang:</b> Nach jeder Stufe kannst du weitermachen – oder direkt in eine Ausbildung starten.</p>
 </div></section>
 
-<section id="bildungsgaenge"><div class="wrap">
-  <p class="eyebrow c">Unsere Bildungsgänge</p>
-  <h2>Alle Bildungsgänge im Überblick</h2>
-  <p class="sub">Voraussetzung, Dauer, Abschluss – und wie es danach weitergeht.</p>
-  <div id="allBg"></div>
-</div></section>
-
-<section id="berufe" style="background:#fff"><div class="wrap">
+<section id="berufe"><div class="wrap">
   <p class="eyebrow c">Ausbildungsberufe</p>
   <h2>Mit Abschluss in die Ausbildung</h2>
   <p class="sub">Als Berufsschule begleiten wir Azubis in diesen Berufen:</p>
   <div class="jobs">
-    <div class="job">Einzelhandelskaufleute</div>
-    <div class="job">Verkäuferin / Verkäufer</div>
-    <div class="job">Automobilkaufleute</div>
-    <div class="job">Industriekaufleute</div>
-    <div class="job">Groß- und Außenhandelskaufleute</div>
-    <div class="job">Kaufleute für Büromanagement</div>
+    <div class="job">Einzelhandelskaufleute</div><div class="job">Verkäuferin / Verkäufer</div><div class="job">Automobilkaufleute</div>
+    <div class="job">Industriekaufleute</div><div class="job">Groß- und Außenhandelskaufleute</div><div class="job">Kaufleute für Büromanagement</div>
   </div>
   <p class="note"><b>Und noch viel mehr:</b> Bank, Versicherung, Steuer- und Rechtsanwaltskanzlei, Verwaltung, Immobilien, Arzt- und Zahnarztpraxis (MFA, ZFA), Polizei-Verwaltung …</p>
 </div></section>
 
-<section id="anmeldung"><div class="wrap">
+<section id="anmeldung" style="background:#fff"><div class="wrap">
   <p class="eyebrow c">Anmeldung</p>
   <h2>So meldest du dich an</h2>
   <div class="reg">
     <div>
       <div class="regstep"><div class="n">1</div><div><h3>Online bewerben</h3><p>Auf <a href="https://www.schulbewerbung.de" target="_blank" rel="noopener">schulbewerbung.de</a> – mit dem Startcode deiner jetzigen Schule.</p></div></div>
       <div class="regstep"><div class="n">2</div><div><h3>Ausdrucken und unterschreiben</h3><p>Anmeldeformular und Datenschutz-Einwilligung im Sekretariat abgeben. Unter 18: Eltern unterschreiben mit.</p></div></div>
-      <div class="regstep"><div class="n">3</div><div><h3>Zeugnis mitbringen</h3><p>Kopie deines letzten Zeugnisses. Höhere Handelsschule: dazu ein tabellarischer Lebenslauf.</p></div></div>
+      <div class="regstep"><div class="n">3</div><div><h3>Zeugnis mitbringen</h3><p>Kopie deines letzten Zeugnisses. Höhere Berufsfachschule: dazu ein tabellarischer Lebenslauf.</p></div></div>
     </div>
     <div class="card" style="border-top-color:var(--blue)">
       <h3>Alle Infos zur Anmeldung</h3>
@@ -228,12 +80,12 @@ footer a{color:#fff}
   </div>
 </div></section>
 
-<section id="praesentation" style="background:#fff"><div class="wrap">
+<section id="praesentation"><div class="wrap">
   <p class="eyebrow c">Präsentation</p>
   <h2>Die ganze Präsentation</h2>
   <p class="sub">Blättere durch alle Folien oder lade die Präsentation herunter.</p>
   <div class="viewer">
-    <img id="slide" src="assets/folie-01.png" alt="Folie 1 der Präsentation">
+    <img id="slide" src="assets/folie-01.png" alt="Folie 1 der Präsentation" loading="lazy">
     <div class="vctrl">
       <button id="prev" aria-label="Vorherige Folie">‹ Zurück</button>
       <span id="slideNo">Folie 1 / 11</span>
@@ -255,123 +107,14 @@ footer a{color:#fff}
     <a href="https://www.berufskolleg.biz" target="_blank" rel="noopener">🌐 www.berufskolleg.biz</a>
   </div>
 </div></section>
-
 <footer><div class="wrap">Berufskolleg Rheydt-Mülfort · Mönchengladbach · <a href="https://www.berufskolleg.biz">www.berufskolleg.biz</a></div></footer>
 
 <script>
-const BG = {
-  av: {
-    id:"ausbildungsvorbereitung", kurz:"AV", nr:1, color:"#14708c",
-    name:"Ausbildungsvorbereitung",
-    claim:"Für dich, wenn du (noch) keinen Abschluss hast.",
-    voraussetzung:"Kein Abschluss nötig", dauer:"1 Jahr", abschluss:"Erster Schulabschluss",
-    punkte:["3 Tage Praktikum (Mo–Mi), 2 Tage Schule (Do + Fr)","Unterricht nah an echten Betriebssituationen","Schulsozialarbeit und persönliche Beratung","Hilfe bei Berufswahl und Praktikumssuche"],
-    danach:"Mit dem Ersten Schulabschluss weiter in die Handelsschule HS 9 – oder direkt in eine Ausbildung.",
-    next:"hs9"
-  },
-  hs9: {
-    id:"handelsschule-hs9", kurz:"HS 9", nr:2, color:"#1673c8",
-    name:"Handelsschule HS 9",
-    claim:"Kaufmännische Grundlagen – und dein nächster Abschluss.",
-    voraussetzung:"Erster Schulabschluss", dauer:"1 Jahr", abschluss:"Erweiterter Erster Schulabschluss",
-    punkte:["Geschäftsprozesse, Mathe, Englisch, Deutsch","30 Praktikumstage: 1 Woche im Herbst, dann 1 Tag pro Woche","Kleine Klassen, Schwerpunkt Einzelhandel","Enge Zusammenarbeit mit der Agentur für Arbeit"],
-    danach:"Weiter in die Handelsschule HS 10 zum Mittleren Schulabschluss – oder in eine Ausbildung.",
-    next:"hs10"
-  },
-  hs10: {
-    id:"handelsschule-hs10", kurz:"HS 10", nr:3, color:"#3a3aa0",
-    name:"Handelsschule HS 10",
-    claim:"Dein Weg zum Mittleren Schulabschluss.",
-    voraussetzung:"Erweiterter Erster Schulabschluss", dauer:"1 Jahr", abschluss:"Mittlerer Schulabschluss (FOR)",
-    punkte:["Geschäftsprozesse, Wirtschaft, Mathe, Englisch","30 Praktikumstage im kaufmännischen Bereich","Mit guten Noten: Berechtigung für die Oberstufe","Unterstützung bei der Ausbildungsplatzsuche"],
-    danach:"Weiter in die Höhere Handelsschule oder die gymnasiale Oberstufe – oder in eine Ausbildung.",
-    next:"hoeha"
-  },
-  hoeha: {
-    id:"hoehere-handelsschule", kurz:"HöHa", nr:4, color:"#0d0c5e",
-    name:"Höhere Handelsschule",
-    alias:"Höhere Berufsfachschule für Wirtschaft und Verwaltung",
-    claim:"Wirtschaft verstehen – mit Fachhochschulreife.",
-    voraussetzung:"Mittlerer Schulabschluss (FOR)", dauer:"2 Jahre", abschluss:"Fachhochschulreife (schulischer Teil)",
-    punkte:["Abschlussfächer: BWL mit Rechnungswesen, Deutsch, Mathe, Englisch","Zur Wahl: Gesundheitscoaching, Spanisch oder Französisch","2 Wochen Betriebspraktikum im ersten Jahr","Kein Aufnahmetest: FOR mit oder ohne Q-Vermerk reicht"],
-    danach:"Mit Praktikum oder Ausbildung zur vollen Fachhochschulreife – dann Ausbildung oder Studium an einer FH.",
-    next:null
-  }
-};
-const ABSCHLUESSE = [
-  {key:"av",  titel:"Noch keinen Abschluss", info:"Schulpflicht in der Sek. I erfüllt"},
-  {key:"hs9", titel:"Erster Schulabschluss", info:"früher: Hauptschulabschluss nach Klasse 9"},
-  {key:"hs10",titel:"Erweiterter Erster Schulabschluss", info:"früher: Hauptschulabschluss nach Klasse 10"},
-  {key:"hoeha",titel:"Mittlerer Schulabschluss (FOR)", info:"oder Versetzung in die Oberstufe (Gymnasium)"}
-];
-
-function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
-
-function card(b, opts={}){
-  const nextBtn = b.next
-    ? `<a class="btn outline" href="#${BG[b.next].id}">Danach: ${esc(BG[b.next].name)}</a>` : "";
-  return `<article class="bg-card" ${opts.anchor?`id="${b.id}"`:""} style="--c:${b.color}">
-    <div class="bg-head">
-      <div><p class="eyebrow" style="color:${b.color};margin:0">Bildungsgang ${b.nr}</p>
-        <h3>${esc(b.name)}</h3>${b.alias?`<p style="font-size:.9rem">(${esc(b.alias)})</p>`:""}<p>${esc(b.claim)}</p></div>
-      <div class="badge">${esc(b.kurz)}</div>
-    </div>
-    <div class="facts">
-      <div class="fact"><span>Voraussetzung</span><b>${esc(b.voraussetzung)}</b></div>
-      <div class="fact"><span>Dauer</span><b>${esc(b.dauer)}</b></div>
-      <div class="fact"><span>Abschluss</span><b>${esc(b.abschluss)}</b></div>
-    </div>
-    <div class="bg-body">
-      <div><h4>Was dich erwartet</h4><ul>${b.punkte.map(p=>`<li>${esc(p)}</li>`).join("")}</ul></div>
-      <div class="next"><h4>Und danach?</h4><p>${esc(b.danach)}</p></div>
-    </div>
-    ${opts.actions?`<div class="bg-actions"><a class="btn dark" href="#anmeldung">Jetzt anmelden</a>${nextBtn}</div>`:""}
-  </article>`;
-}
-
-// Schulberater
-const choicesEl=document.getElementById("choices"), resultEl=document.getElementById("result");
-ABSCHLUESSE.forEach((a,i)=>{
-  const b=BG[a.key];
-  const btn=document.createElement("button");
-  btn.className="choice"; btn.type="button"; btn.style.setProperty("--c",b.color);
-  btn.setAttribute("aria-pressed","false");
-  btn.innerHTML=`<span class="num">${i+1}</span><span><b>${esc(a.titel)}</b><small>${esc(a.info)}</small></span>`;
-  btn.addEventListener("click",()=>choose(a.key,true));
-  btn.dataset.key=a.key;
-  choicesEl.appendChild(btn);
-});
-function choose(key,scroll){
-  const a=ABSCHLUESSE.find(x=>x.key===key), b=BG[key];
-  if(!a) return;
-  choicesEl.querySelectorAll(".choice").forEach(c=>c.setAttribute("aria-pressed",String(c.dataset.key===key)));
-  resultEl.style.setProperty("--c",b.color);
-  resultEl.innerHTML=`<div class="arrow-line"><span class="pill">${esc(a.titel)}</span><span>→</span><span class="pill to">Dein Bildungsgang: ${esc(b.name)}</span></div>`+card(b,{actions:true});
-  resultEl.classList.add("show");
-  history.replaceState(null,"","#berater-"+key);
-  if(scroll) resultEl.scrollIntoView({behavior:"smooth",block:"start"});
-}
-
-// Treppe
-const stairs=document.getElementById("stairs");
-Object.values(BG).forEach(b=>{
-  stairs.insertAdjacentHTML("beforeend",`<a class="step" style="--c:${b.color}" href="#${b.id}"><span class="lvl">${esc(b.kurz)}</span><span><b>${esc(b.name)}</b><br><span>→ ${esc(b.abschluss)}</span></span></a>`);
-});
-stairs.insertAdjacentHTML("beforeend",`<a class="step" style="--c:#2f8a4e" href="#berufe"><span class="lvl">🎓</span><span><b>Ausbildung oder Studium</b><br><span>Kaufmännische Ausbildung oder Fachhochschule</span></span></a>`);
-
-// Alle Bildungsgänge
-document.getElementById("allBg").innerHTML=Object.values(BG).map(b=>card(b,{anchor:true,actions:true})).join("");
-
-// Direktlink z. B. #berater-hoeha
-const m=location.hash.match(/^#berater-(\w+)$/);
-if(m) choose(m[1],true);
-
-// Präsentation
-const N=11; let cur=1;
-const img=document.getElementById("slide"), no=document.getElementById("slideNo");
+// alte Direktlinks (#berater-…) auf die neuen Seiten umleiten
+const R={"av":"av.html","hs9":"bfs1.html","hs10":"bfs2.html","hoeha":"hoehere-berufsfachschule.html"};const m=location.hash.match(/^#berater-(\w+)$/);if(m&&R[m[1]])location.replace(R[m[1]]);
+const N=11;let cur=1;const img=document.getElementById("slide"),no=document.getElementById("slideNo");
 function show(n){cur=(n+N-1)%N+1;const s=String(cur).padStart(2,"0");img.src=`assets/folie-${s}.png`;img.alt=`Folie ${cur} der Präsentation`;no.textContent=`Folie ${cur} / ${N}`;}
-document.getElementById("prev").onclick=()=>show(cur-1);
-document.getElementById("next").onclick=()=>show(cur+1);
+document.getElementById("prev").onclick=()=>show(cur-1);document.getElementById("next").onclick=()=>show(cur+1);
 let sx=null;img.addEventListener("touchstart",e=>sx=e.touches[0].clientX,{passive:true});
 img.addEventListener("touchend",e=>{if(sx===null)return;const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>40)show(cur+(d<0?1:-1));sx=null;});
 </script>
