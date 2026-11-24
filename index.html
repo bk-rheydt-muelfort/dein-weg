@@ -111,7 +111,7 @@
   <h2 class="display">Die ganze Präsentation</h2>
   <p class="lead">Blättere durch alle Folien oder lade die Präsentation herunter.</p>
   <div class="viewer glass">
-    <img id="slide" src="assets/folie-01.png" alt="Folie 1 der Präsentation" loading="lazy">
+    <img id="slide" src="assets/folie-01.jpg" alt="Folie 1 der Präsentation" loading="lazy">
     <div class="vctrl">
       <button class="btn small" id="prev" aria-label="Vorherige Folie">‹ Zurück</button>
       <span id="slideNo">Folie 1 / 13</span>
@@ -142,7 +142,7 @@
 <script>
 const R={"av":"av.html","hs9":"bfs1.html","hs10":"bfs2.html","hoeha":"hoehere-berufsfachschule.html"};const m=location.hash.match(/^#berater-(\w+)$/);if(m&&R[m[1]])location.replace(R[m[1]]);
 const N=13;let cur=1;const img=document.getElementById("slide"),no=document.getElementById("slideNo");
-function show(n){cur=(n+N-1)%N+1;const s=String(cur).padStart(2,"0");img.src=`assets/folie-${s}.png`;img.alt=`Folie ${cur} der Präsentation`;no.textContent=`Folie ${cur} / ${N}`;}
+function show(n){cur=(n+N-1)%N+1;const s=String(cur).padStart(2,"0");img.src=`assets/folie-${s}.jpg`;img.alt=`Folie ${cur} der Präsentation`;no.textContent=`Folie ${cur} / ${N}`;}
 document.getElementById("prev").onclick=()=>show(cur-1);document.getElementById("next").onclick=()=>show(cur+1);
 let sx=null;img.addEventListener("touchstart",e=>sx=e.touches[0].clientX,{passive:true});
 img.addEventListener("touchend",e=>{if(sx===null)return;const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>40)show(cur+(d<0?1:-1));sx=null;});
