@@ -18,8 +18,9 @@ PAGES = [
          voraussetzung="Kein Abschluss nötig", dauer="1 Jahr", abschluss="Erster Schulabschluss",
          punkte=["3 Tage Praktikum (Mo–Mi), 2 Tage Schule (Do + Fr)", "Unterricht nah an echten Betriebssituationen",
                  "Schulsozialarbeit und persönliche Beratung", "Hilfe bei Berufswahl und Praktikumssuche"],
+         hinweis="Den Praktikumsplatz suchst du dir vor Schuljahresbeginn selbst – am besten in einem Betrieb, der auch ausbildet. Die AV kann auch als 10. Pflichtschuljahr besucht werden.",
          danach="Mit dem Ersten Schulabschluss weiter in die Berufsfachschule 1 (Handelsschule HS 9) – oder direkt in eine Ausbildung.",
-         next="bfs1", bild="teamuebung",
+         next="bfs1", bild="teamuebung", gruppe="schule",
          wahl="Noch keinen Abschluss", wahl_info="Schulpflicht in der Sek. I erfüllt"),
     dict(key="bfs1", file="bfs1.html", kurz="BFS 1", nr=2, color="#46a0f0",
          name="Berufsfachschule 1", alias="Handelsschule HS 9",
@@ -28,7 +29,7 @@ PAGES = [
          punkte=["Geschäftsprozesse, Mathe, Englisch, Deutsch", "30 Praktikumstage: 1 Woche im Herbst, dann 1 Tag pro Woche",
                  "Kleine Klassen, Schwerpunkt Einzelhandel", "Enge Zusammenarbeit mit der Agentur für Arbeit"],
          danach="Weiter in die Berufsfachschule 2 (Handelsschule HS 10) zum Mittleren Schulabschluss – oder in eine Ausbildung.",
-         next="bfs2", bild="schule-eingang",
+         next="bfs2", bild="schule-eingang", gruppe="schule",
          wahl="Erster Schulabschluss", wahl_info="früher: Hauptschulabschluss nach Klasse 9"),
     dict(key="bfs2", file="bfs2.html", kurz="BFS 2", nr=3, color="#9a8cff",
          name="Berufsfachschule 2", alias="Handelsschule HS 10",
@@ -36,8 +37,9 @@ PAGES = [
          voraussetzung="Erweiterter Erster Schulabschluss", dauer="1 Jahr", abschluss="Mittlerer Schulabschluss (FOR)",
          punkte=["Geschäftsprozesse, Wirtschaft, Mathe, Englisch", "30 Praktikumstage im kaufmännischen Bereich",
                  "Mit guten Noten: Berechtigung für die Oberstufe", "Unterstützung bei der Ausbildungsplatzsuche"],
+         hinweis="Auch möglich: nach Klasse 9 des Gymnasiums mit der Berechtigung für die Oberstufe.",
          danach="Weiter in die Höhere Berufsfachschule oder die gymnasiale Oberstufe – oder in eine Ausbildung.",
-         next="hbfs", bild="schule-front",
+         next="hbfs", bild="schule-front", gruppe="schule",
          wahl="Erweiterter Erster Schulabschluss", wahl_info="früher: Hauptschulabschluss nach Klasse 10"),
     dict(key="hbfs", file="hoehere-berufsfachschule.html", kurz="HBFS", nr=4, color="#5fd0b0",
          name="Höhere Berufsfachschule", alias="Höhere Handelsschule",
@@ -47,8 +49,46 @@ PAGES = [
                  "Zur Wahl: Gesundheitscoaching, Spanisch oder Französisch",
                  "2 Wochen Betriebspraktikum im ersten Jahr", "Kein Aufnahmetest: FOR mit oder ohne Q-Vermerk reicht"],
          danach="Mit Praktikum oder Ausbildung zur vollen Fachhochschulreife – dann Ausbildung oder Studium an einer FH.",
-         next=None, bild="schulhof-gruppe",
-         wahl="Mittlerer Schulabschluss (FOR)", wahl_info="oder Versetzung in die Oberstufe (Gymnasium)"),
+         next="bs", bild="schulhof-gruppe", gruppe="schule",
+         wahl="Mittlerer Schulabschluss (FOR)", wahl_info="oder Versetzung in die Oberstufe (Gymnasium)",
+         hinweis="Bei der Anmeldung brauchst du einen tabellarischen Lebenslauf und eine Kopie deines letzten Zeugnisses."),
+    dict(key="if", file="internationale-foerderklassen.html", kurz="IF", nr=5, color="#f08aa8",
+         name="Internationale Förderklassen", alias=None, gruppe="schule",
+         claim="Für dich, wenn du neu in Deutschland bist und Deutsch lernst.",
+         voraussetzung="Neu zugewandert, ab 16 Jahren", dauer="1 Jahr (bei wenig Deutsch: 2 Jahre)", abschluss="Erster Schulabschluss (vergleichbar)",
+         punkte=["Deutsch lernen – auch die Fachsprache", "Mathe, Englisch und kaufmännische Fächer",
+                 "Zwei Wochen Praktikum und Berufsorientierung", "Begleitung durch Schulsozialarbeit und Berufsorientierungsbüro (BOB)"],
+         danach="Mit dem Abschluss weiter in einen anderen Bildungsgang am Berufskolleg – oder in eine Ausbildung.",
+         next="bfs1", bild="schueler-gruppe",
+         wahl="Neu in Deutschland", wahl_info="und du lernst noch Deutsch",
+         anmelde_url="tel:+4921612553784", anmelde_label="Beratung: Kommunale Integrationsstelle",
+         hinweis="Die Aufnahme läuft nicht direkt über uns, sondern über die Kommunale Integrationsstelle (KI) der Stadt Mönchengladbach: Telefon 02161 / 25-53784, ki@moenchengladbach.de."),
+    dict(key="bs", file="berufsschule.html", kurz="BS", nr=6, color="#f0c060",
+         name="Berufsschule", alias="Duale Ausbildung", gruppe="beruf",
+         claim="Du machst eine kaufmännische Ausbildung – wir sind deine Berufsschule.",
+         voraussetzung="Ausbildungsvertrag", dauer="2 bis 3 Jahre", abschluss="Berufsabschluss + Berufsschulabschluss",
+         punkte=["Unterricht an 1 bis 2 Tagen pro Woche, die übrige Zeit im Betrieb", "Fächer passend zu deinem Beruf, dazu Deutsch, Englisch, Politik",
+                 "Einzelhandel, Groß- und Außenhandel, Büromanagement am Teilstandort Bruchstraße", "Dein Betrieb meldet dich bei uns an"],
+         danach="Mit Berufsabschluss und Berufserfahrung weiter zur Fachschule für Wirtschaft – bis zum Bachelor Professional.",
+         next="fs", bild="schule-front",
+         wahl="Ich habe einen Ausbildungsplatz", wahl_info="kaufmännische Ausbildung",
+         anmelde_url="https://www.berufskolleg.biz/schuelerinnen-und-schueler/anmeldung/anmeldung-berufsschule/", anmelde_label="Anmeldung Berufsschule (für Betriebe)",
+         berufe=[("Kaufleute im Einzelhandel", "3 Jahre", "https://www.berufskolleg.biz/einzelhandelskaufleute/"),
+                 ("Verkäuferin / Verkäufer", "2 Jahre", "https://www.berufskolleg.biz/verkaeuferinnen-und-verkaeufer/"),
+                 ("Automobilkaufleute", "3 Jahre", "https://www.berufskolleg.biz/automobilkaufleute/"),
+                 ("Industriekaufleute", "3 Jahre", "https://www.berufskolleg.biz/industriekaufleute/"),
+                 ("Kaufleute im Groß- und Außenhandel", "3 Jahre", "https://www.berufskolleg.biz/gross-und-aussenhandelskaufleute/"),
+                 ("Kaufleute für Büromanagement", "3 Jahre", "https://www.berufskolleg.biz/kaufleute-fuer-bueromanagement/")]),
+    dict(key="fs", file="fachschule.html", kurz="FS", nr=7, color="#f0915a",
+         name="Fachschule für Wirtschaft", alias="Schwerpunkt Personalwirtschaft · Weiterbildung", gruppe="beruf",
+         claim="Weiterbildung neben dem Beruf – für Führungsaufgaben im mittleren Management.",
+         voraussetzung="Ausbildung + 1 Jahr Beruf + FOR", dauer="8 Semester (mit FHR ggf. 6)", abschluss="Bachelor Professional (Staatl. gepr. Betriebswirt/in)",
+         punkte=["Personalwirtschaft, BWL, Rechnungswesen, Wirtschaftsinformatik", "Befreiung von der Ausbildereignungsprüfung möglich",
+                 "Vorbereitung auf Selbstständigkeit (Existenzgründung)", "Ohne FOR: Aufnahme mit 5 Jahren Berufserfahrung möglich"],
+         danach="Mehr Verantwortung im Beruf: Führungsaufgaben, Personalverantwortung oder der Schritt in die Selbstständigkeit.",
+         next=None, bild="schule-eingang",
+         wahl="Ausbildung abgeschlossen", wahl_info="und du willst dich weiterbilden",
+         anmelde_url="https://www.berufskolleg.biz/schuelerinnen-und-schueler/anmeldung/weiterbildung-buttons/anmeldung-fachschule/", anmelde_label="Anmeldung Fachschule"),
 ]
 BY = {p["key"]: p for p in PAGES}
 
@@ -131,6 +171,8 @@ button.btn{font-family:inherit}
 .choice small{display:block;color:var(--muted);font-size:.9rem}
 .choice .to{display:block;color:var(--c);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.75rem;margin-top:4px}
 .choice .go{margin-left:auto;color:var(--c);font-size:1.6rem;font-weight:300}
+.group-label{color:var(--white);font-weight:600;font-size:1.1rem;margin:26px 0 12px}
+.job small{display:block;color:var(--muted);font-weight:400;font-size:.85rem}
 .hint{color:var(--muted);font-size:.95rem;margin-top:16px}
 .hint a{color:var(--white)}
 
@@ -334,14 +376,19 @@ def gallery():
 
 # ---------------------------------------------------------------- Seiten
 def index():
-    choices = "".join(
-        f"""<a class="choice glass" style="--c:{p['color']}" href="{p['file']}"><span class="num">{i}</span>
+    ORDER = ["av", "if", "bfs1", "bfs2", "hbfs", "bs", "fs"]
+    def ch(i, p):
+        return f"""<a class="choice glass" style="--c:{p['color']}" href="{p['file']}"><span class="num">{i}</span>
       <span><b>{e(p['wahl'])}</b><small>{e(p['wahl_info'])}</small><span class="to">→ {e(p['name'])}</span></span><span class="go" aria-hidden="true">›</span></a>
-    """ for i, p in enumerate(PAGES, 1))
+    """
+    ordered = [BY[k] for k in ORDER]
+    schule = [p for p in ordered if p["gruppe"] == "schule"]
+    beruf = [p for p in ordered if p["gruppe"] == "beruf"]
+    choices = "".join(ch(i, p) for i, p in enumerate(schule, 1))
+    choices_beruf = "".join(ch(i, p) for i, p in enumerate(beruf, len(schule) + 1))
     stairs = "".join(
         f"""<a class="step glass" style="--c:{p['color']}" href="{p['file']}"><span class="lvl">{e(p['kurz'])}</span><span><b>{e(full_name(p))}</b><br><span>→ {e(p['abschluss'])}</span></span></a>"""
-        for p in PAGES)
-    stairs += """<a class="step glass" style="--c:#f0c060" href="#berufe"><span class="lvl">Ziel</span><span><b>Ausbildung oder Studium</b><br><span>Kaufmännische Ausbildung oder Fachhochschule</span></span></a>"""
+        for p in [BY[k] for k in ["av", "bfs1", "bfs2", "hbfs", "bs", "fs"]])
     redirect = ",".join(f'"{k}":"{v}"' for k, v in
                         {"av": "av.html", "hs9": "bfs1.html", "hs10": "bfs2.html", "hoeha": "hoehere-berufsfachschule.html"}.items())
     return head("Dein Weg. Dein Abschluss. – Berufskolleg Rheydt-Mülfort",
@@ -353,8 +400,12 @@ def index():
   <h1 class="display">Dein Weg.<br>Dein Abschluss.</h1>
   <h2 class="q">Mit welchem Schulabschluss kommst du zu uns?</h2>
   <p class="qsub">Wähle deinen Abschluss – oder den, den du im Sommer bekommst.</p>
+  <p class="group-label" style="margin-top:0">Du kommst von der Schule?</p>
   <div class="choices">
     {choices}</div>
+  <p class="group-label">Du bist schon im Beruf?</p>
+  <div class="choices">
+    {choices_beruf}</div>
   <p class="hint">Du bist unsicher? Ruf uns an unter <a href="tel:+492166917920">02166-917920</a> – wir beraten dich gern.</p>
 </div></section>
 
@@ -376,7 +427,7 @@ def index():
   <h2 class="display">Schritt für Schritt nach oben</h2>
   <p class="lead">Tippe auf eine Stufe, um mehr zu erfahren.</p>
   <div class="stairs">{stairs}</div>
-  <p class="note glass"><b>Reibungsloser Übergang:</b> Nach jeder Stufe kannst du weitermachen – oder direkt in eine Ausbildung starten.</p>
+  <p class="note glass"><b>Reibungsloser Übergang:</b> Nach jeder Stufe kannst du weitermachen – oder direkt in eine Ausbildung starten. In der Ausbildung sind wir deine Berufsschule, danach geht es mit der Fachschule weiter. Neu in Deutschland? Dann startest du in den <a href="internationale-foerderklassen.html">Internationalen Förderklassen</a>.</p>
 </div></section>
 
 <section id="berufe"><div class="wrap">
@@ -387,6 +438,7 @@ def index():
     <div class="job glass">Einzelhandelskaufleute</div><div class="job glass">Verkäuferin / Verkäufer</div><div class="job glass">Automobilkaufleute</div>
     <div class="job glass">Industriekaufleute</div><div class="job glass">Groß- und Außenhandelskaufleute</div><div class="job glass">Kaufleute für Büromanagement</div>
   </div>
+  <p class="btns" style="margin-top:18px"><a class="btn" href="berufsschule.html">Mehr zur Berufsschule ›</a></p>
   <p class="note glass"><b>Und noch viel mehr:</b> Bank, Versicherung, Steuer- und Rechtsanwaltskanzlei, Verwaltung, Immobilien, Arzt- und Zahnarztpraxis (MFA, ZFA), Polizei-Verwaltung …</p>
 </div></section>
 
@@ -424,20 +476,27 @@ img.addEventListener("touchend",e=>{{if(sx===null)return;const d=e.changedTouche
 """
 
 
+def berufe_html(p):
+    if not p.get("berufe"):
+        return ""
+    items = "".join(f'<a class="job glass" href="{u}" target="_blank" rel="noopener" style="text-decoration:none">{e(n)}<small>{e(d)}</small></a>' for n, d, u in p["berufe"])
+    return f'<div class="panel glass"><h2>Diese Berufe begleiten wir</h2><div class="jobs" style="margin-top:6px">{items}</div><p style="margin:14px 0 0;color:var(--muted)">Und noch viel mehr: Bank, Versicherung, Steuer- und Rechtsanwaltskanzlei, Verwaltung, Immobilien, Arzt- und Zahnarztpraxis (MFA, ZFA), Polizei-Verwaltung …</p></div>'
+
+
 def page(p):
     nxt = BY[p["next"]] if p["next"] else None
-    next_link = f'<p style="margin-top:14px"><a href="{nxt["file"]}">Mehr zur {e(nxt["name"])} ›</a></p>' if nxt else ""
+    next_link = f'<p style="margin-top:14px"><a href="{nxt["file"]}">Weiter: {e(nxt["name"])} ›</a></p>' if nxt else ""
     back = '<a class="back" href="index.html"><span class="chev" style="transform:rotate(-90deg) scaleX(1.4)">^</span>Zur Startseite</a>'
     return head(f"{full_name(p)} – Berufskolleg Rheydt-Mülfort",
                 f"{p['name']} am Berufskolleg Rheydt-Mülfort: {p['claim']}", preload=p["bild"]) \
         + header('<a href="index.html">Startseite</a><a href="#infotag">Infotag</a><a href="#kontakt">Kontakt</a>') + f"""
 <section class="bg-hero" style="--c:{p['color']}">{hero_bg(p['bild'])}<div class="wrap">
   {back}
-  <span class="eyebrow"><span class="chev">^</span>Bildungsgang {p['nr']} · {e(p['kurz'])}</span>
+  <span class="eyebrow"><span class="chev">^</span>Bildungsangebot · {e(p['kurz'])}</span>
   <h1 class="display">{e(p['name'])}</h1>
   {f'<p class="alias">{e(p["alias"])}</p>' if p['alias'] else ''}
   <p class="claim">{e(p['claim'])}</p>
-  <div class="btns"><a class="btn solid" href="{ANMELDE_URL}" target="_blank" rel="noopener">Jetzt anmelden</a><a class="btn" href="#infotag">Infotag 13.02.2027</a></div>
+  <div class="btns"><a class="btn solid" href="{p.get('anmelde_url', ANMELDE_URL)}" target="_blank" rel="noopener">{e(p.get('anmelde_label', 'Jetzt anmelden'))}</a><a class="btn" href="#infotag">Infotag 13.02.2027</a></div>
 </div></section>
 
 <section class="tight" style="--c:{p['color']}"><div class="wrap stack">
@@ -450,6 +509,8 @@ def page(p):
     <div class="fact glass"><span>Abschluss</span><b>{e(p['abschluss'])}</b></div>
   </div>
 
+  {f'<div class="glass note" style="margin-top:0"><b>Gut zu wissen:</b> {e(p["hinweis"])}</div>' if p.get('hinweis') else ''}
+  {berufe_html(p)}
   <div class="two">
     <div class="panel glass"><h2>Was dich erwartet</h2><ul>{''.join(f'<li>{e(x)}</li>' for x in p['punkte'])}</ul></div>
     <div class="panel next" style="border-radius:var(--r)"><h2>Und danach?</h2><p style="margin:0">{e(p['danach'])}</p>{next_link}</div>

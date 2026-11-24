@@ -64,6 +64,8 @@ button.btn{font-family:inherit}
 .choice small{display:block;color:var(--muted);font-size:.9rem}
 .choice .to{display:block;color:var(--c);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.75rem;margin-top:4px}
 .choice .go{margin-left:auto;color:var(--c);font-size:1.6rem;font-weight:300}
+.group-label{color:var(--white);font-weight:600;font-size:1.1rem;margin:26px 0 12px}
+.job small{display:block;color:var(--muted);font-weight:400;font-size:.85rem}
 .hint{color:var(--muted);font-size:.95rem;margin-top:16px}
 .hint a{color:var(--white)}
 
