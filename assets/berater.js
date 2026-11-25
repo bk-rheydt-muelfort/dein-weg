@@ -88,8 +88,8 @@
   }
 
   const ZIELE = {
-    ausbildung: { name: "Ausbildung", kurz: "Beruf", color: "#f0c060", file: BG.bs.file },
-    studium: { name: "Studium an einer FH", kurz: "FH", color: "#ffffff", file: null },
+    ausbildung: { name: "Ausbildung", kurz: "Beruf", color: "#c58500", file: BG.bs.file },
+    studium: { name: "Studium an einer FH", kurz: "FH", color: "#090058", file: null },
   };
 
   // ---------- Darstellung
