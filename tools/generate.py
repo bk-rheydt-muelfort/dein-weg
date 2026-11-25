@@ -4,7 +4,7 @@
 Aufruf: python3 gen2.py <repo-ordner>
 Inhalte ändern: unten in PAGES, PHOTOS, INFOTAG_TEXT usw. – nicht in den HTML-Dateien.
 """
-import html, pathlib, sys
+import html, json, pathlib, sys
 
 OUT = pathlib.Path(sys.argv[1])
 e = html.escape
@@ -173,6 +173,29 @@ button.btn{font-family:inherit}
 .choice .go{margin-left:auto;color:var(--c);font-size:1.6rem;font-weight:300}
 .group-label{color:var(--white);font-weight:600;font-size:1.1rem;margin:26px 0 12px}
 .job small{display:block;color:var(--muted);font-weight:400;font-size:.85rem}
+/* Schulberater */
+.berater{scroll-margin-top:90px}
+button.choice{font:inherit;width:100%;text-align:left;cursor:pointer;border:1px solid var(--glass-b)}
+button.choice:focus-visible,.b-back:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.b-top{display:flex;justify-content:space-between;align-items:center;margin:0 0 6px;min-height:34px}
+.b-back{background:none;border:0;color:var(--text);font:inherit;text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:600;cursor:pointer;padding:6px 0}
+.b-back:hover{color:var(--white)}
+.dots{display:flex;gap:8px}.dot{width:28px;height:4px;border-radius:2px;background:rgba(255,255,255,.18)}.dot.on{background:var(--accent)}
+.result{padding:26px;border-color:var(--c)}
+.result .badge{display:inline-block;background:var(--c);color:#06102a;font-weight:800;border-radius:999px;padding:6px 16px;margin-bottom:12px}
+.result h2{font-size:clamp(1.7rem,6vw,2.6rem);font-weight:300;text-transform:uppercase;letter-spacing:.08em;line-height:1.1;hyphens:auto;overflow-wrap:break-word}
+.result .alias{color:var(--muted);text-transform:uppercase;letter-spacing:.14em;font-size:.82rem;margin:6px 0 0}
+.result .claim{color:var(--white);font-size:1.1rem;margin:12px 0 18px}
+.result .beruf{margin:-6px 0 18px}
+.result h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.2em;color:var(--c);margin:24px 0 12px}
+.path{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--c);border-radius:999px;padding:6px 14px 6px 6px;color:var(--white);text-decoration:none;font-weight:600;font-size:.95rem;background:rgba(255,255,255,.03)}
+.chip .lvl{background:var(--c);color:#06102a;border-radius:999px;padding:2px 9px;font-size:.78rem;font-weight:800}
+a.chip:hover{background:rgba(255,255,255,.08)}
+.arrow{color:var(--muted)}
+.tips{margin:18px 0 0;padding-left:20px;color:var(--text)}.tips li{margin:6px 0}
+.btn.ghost-muted{border-color:rgba(255,255,255,.25);color:var(--text)}
+.btn.ghost-muted:hover{background:rgba(255,255,255,.1);color:var(--white)}
 .hint{color:var(--muted);font-size:.95rem;margin-top:16px}
 .hint a{color:var(--white)}
 
@@ -374,6 +397,15 @@ def gallery():
     return f'<div class="gallery">{figs}</div>'
 
 
+def berater_json():
+    keys = ["kurz", "name", "alias", "claim", "voraussetzung", "dauer", "abschluss", "color", "file", "anmelde_url", "anmelde_label", "berufe"]
+    data = {p["key"]: {k: p.get(k) for k in keys} for p in PAGES}
+    for d in data.values():
+        if d["berufe"]:
+            d["berufe"] = [[n, dur] for n, dur, _ in d["berufe"]]
+    return json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
+
+
 # ---------------------------------------------------------------- Seiten
 def index():
     ORDER = ["av", "if", "bfs1", "bfs2", "hbfs", "bs", "fs"]
@@ -398,6 +430,7 @@ def index():
 <section class="hero">{hero_bg("schueler-gruppe")}<div class="wrap">
   <span class="eyebrow">Berufskolleg Rheydt-Mülfort · Mönchengladbach</span>
   <h1 class="display">Dein Weg.<br>Dein Abschluss.</h1>
+  <div id="berater" class="berater" aria-live="polite">
   <h2 class="q">Mit welchem Schulabschluss kommst du zu uns?</h2>
   <p class="qsub">Wähle deinen Abschluss – oder den, den du im Sommer bekommst.</p>
   <p class="group-label" style="margin-top:0">Du kommst von der Schule?</p>
@@ -406,6 +439,7 @@ def index():
   <p class="group-label">Du bist schon im Beruf?</p>
   <div class="choices">
     {choices_beruf}</div>
+  </div>
   <p class="hint">Du bist unsicher? Ruf uns an unter <a href="tel:+492166917920">02166-917920</a> – wir beraten dich gern.</p>
 </div></section>
 
@@ -463,6 +497,8 @@ def index():
 
 {KONTAKT}
 {JS_HEADER}
+<script>window.BILDUNGSGAENGE={berater_json()};window.ANMELDE_URL={json.dumps(ANMELDE_URL)};</script>
+<script src="assets/berater.js" defer></script>
 <script>
 const R={{{redirect}}};const m=location.hash.match(/^#berater-(\\w+)$/);if(m&&R[m[1]])location.replace(R[m[1]]);
 const N=13;let cur=1;const img=document.getElementById("slide"),no=document.getElementById("slideNo");
