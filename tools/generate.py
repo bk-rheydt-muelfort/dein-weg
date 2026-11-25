@@ -298,6 +298,10 @@ footer a{color:#fff}
 section.tight{padding:32px 0}
 """
 
+import hashlib
+CSS_V = hashlib.md5(CSS.encode()).hexdigest()[:8]
+JS_V = hashlib.md5((OUT / "assets" / "berater.js").read_bytes()).hexdigest()[:8]
+
 JS_HEADER = """<script>
 (()=>{const h=document.querySelector('.site-header');const f=()=>h.classList.toggle('scrolled',scrollY>20);f();addEventListener('scroll',f,{passive:true});})();
 </script>"""
@@ -316,7 +320,7 @@ def head(title, desc, preload=None):
 <meta name="theme-color" content="#090058">
 <link rel="icon" href="assets/icon-abschluss.png">
 {pl}
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v={CSS_V}">
 </head>
 <body>
 """
@@ -500,7 +504,7 @@ def index():
 {KONTAKT}
 {JS_HEADER}
 <script>window.BILDUNGSGAENGE={berater_json()};window.ANMELDE_URL={json.dumps(ANMELDE_URL)};</script>
-<script src="assets/berater.js" defer></script>
+<script src="assets/berater.js?v={JS_V}" defer></script>
 <script>
 const R={{{redirect}}};const m=location.hash.match(/^#berater-(\\w+)$/);if(m&&R[m[1]])location.replace(R[m[1]]);
 const N=13;let cur=1;const img=document.getElementById("slide"),no=document.getElementById("slideNo");
