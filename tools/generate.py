@@ -2,7 +2,7 @@
 """Erzeugt die Website "Dein Weg. Dein Abschluss." (index.html + je Bildungsgang eine Seite).
 
 Aufruf: python3 gen2.py <repo-ordner>
-Inhalte ändern: unten in PAGES, PHOTOS, INFOTAG_TEXT usw. – nicht in den HTML-Dateien.
+Inhalte ändern (optional pro Bildungsgang: intro="Einführungstext"): unten in PAGES, PHOTOS, INFOTAG_TEXT usw. – nicht in den HTML-Dateien.
 """
 import html, json, pathlib, sys
 
@@ -20,7 +20,7 @@ PAGES = [
                  "Schulsozialarbeit und persönliche Beratung", "Hilfe bei Berufswahl und Praktikumssuche"],
          hinweis="Den Praktikumsplatz suchst du dir vor Schuljahresbeginn selbst – am besten in einem Betrieb, der auch ausbildet. Die AV kann auch als 10. Pflichtschuljahr besucht werden.",
          danach="Mit dem Ersten Schulabschluss weiter in die Berufsfachschule 1 (Handelsschule HS 9) – oder direkt in eine Ausbildung.",
-         next="bfs1", bild="teamuebung", gruppe="schule",
+         next="bfs1", bild="bg-av", gruppe="schule",
          wahl="Noch keinen Abschluss", wahl_info="Schulpflicht in der Sek. I erfüllt"),
     dict(key="bfs1", file="bfs1.html", kurz="BFS 1", nr=2, color="#46a0f0",
          name="Berufsfachschule 1", alias="Handelsschule HS 9",
@@ -29,7 +29,7 @@ PAGES = [
          punkte=["Geschäftsprozesse, Mathe, Englisch, Deutsch", "30 Praktikumstage: 1 Woche im Herbst, dann 1 Tag pro Woche",
                  "Kleine Klassen, Schwerpunkt Einzelhandel", "Enge Zusammenarbeit mit der Agentur für Arbeit"],
          danach="Weiter in die Berufsfachschule 2 (Handelsschule HS 10) zum Mittleren Schulabschluss – oder in eine Ausbildung.",
-         next="bfs2", bild="schule-eingang", gruppe="schule",
+         next="bfs2", bild="bg-bfs1", gruppe="schule",
          wahl="Erster Schulabschluss", wahl_info="früher: Hauptschulabschluss nach Klasse 9"),
     dict(key="bfs2", file="bfs2.html", kurz="BFS 2", nr=3, color="#9a8cff",
          name="Berufsfachschule 2", alias="Handelsschule HS 10",
@@ -39,7 +39,7 @@ PAGES = [
                  "Mit guten Noten: Berechtigung für die Oberstufe", "Unterstützung bei der Ausbildungsplatzsuche"],
          hinweis="Auch möglich: nach Klasse 9 des Gymnasiums mit der Berechtigung für die Oberstufe.",
          danach="Weiter in die Höhere Berufsfachschule oder die gymnasiale Oberstufe – oder in eine Ausbildung.",
-         next="hbfs", bild="schule-front", gruppe="schule",
+         next="hbfs", bild="bg-bfs2", gruppe="schule",
          wahl="Erweiterter Erster Schulabschluss", wahl_info="früher: Hauptschulabschluss nach Klasse 10"),
     dict(key="hbfs", file="hoehere-berufsfachschule.html", kurz="HBFS", nr=4, color="#5fd0b0",
          name="Höhere Berufsfachschule", alias="Höhere Handelsschule",
@@ -47,9 +47,9 @@ PAGES = [
          voraussetzung="Mittlerer Schulabschluss (FOR)", dauer="2 Jahre", abschluss="Fachhochschulreife (schulischer Teil)",
          punkte=["Abschlussfächer: BWL mit Rechnungswesen, Deutsch, Mathe, Englisch",
                  "Zur Wahl: Gesundheitscoaching, Spanisch oder Französisch",
-                 "2 Wochen Betriebspraktikum im ersten Jahr", "Kein Aufnahmetest: FOR mit oder ohne Q-Vermerk reicht"],
+                 "2 Wochen Betriebspraktikum im ersten Jahr", "Aufnahme mit FOR – mit oder ohne Q-Vermerk"],
          danach="Mit Praktikum oder Ausbildung zur vollen Fachhochschulreife – dann Ausbildung oder Studium an einer FH.",
-         next="bs", bild="schulhof-gruppe", gruppe="schule",
+         next="bs", bild="bg-hbfs", gruppe="schule",
          wahl="Mittlerer Schulabschluss (FOR)", wahl_info="oder Versetzung in die Oberstufe (Gymnasium)",
          hinweis="Bei der Anmeldung brauchst du einen tabellarischen Lebenslauf und eine Kopie deines letzten Zeugnisses."),
     dict(key="if", file="internationale-foerderklassen.html", kurz="IF", nr=5, color="#f08aa8",
@@ -59,7 +59,7 @@ PAGES = [
          punkte=["Deutsch lernen – auch die Fachsprache", "Mathe, Englisch und kaufmännische Fächer",
                  "Zwei Wochen Praktikum und Berufsorientierung", "Begleitung durch Schulsozialarbeit und Berufsorientierungsbüro (BOB)"],
          danach="Mit dem Abschluss weiter in einen anderen Bildungsgang am Berufskolleg – oder in eine Ausbildung.",
-         next="bfs1", bild="schueler-gruppe",
+         next="bfs1", bild="bg-if",
          wahl="Neu in Deutschland", wahl_info="und du lernst noch Deutsch",
          anmelde_url="tel:+4921612553784", anmelde_label="Beratung: Kommunale Integrationsstelle",
          hinweis="Die Aufnahme läuft nicht direkt über uns, sondern über die Kommunale Integrationsstelle (KI) der Stadt Mönchengladbach: Telefon 02161 / 25-53784, ki@moenchengladbach.de."),
@@ -536,8 +536,7 @@ def page(p):
 </div></section>
 
 <section class="tight" style="--c:{p['color']}"><div class="wrap stack">
-  <!-- TEXT VON HERRN ELSEN FOLGT: hier den kurzen Einführungstext einsetzen -->
-  <div class="textbox glass"><p class="placeholder-note">Hier folgt ein kurzer Text zum Bildungsgang.</p></div>
+  {f'<div class="textbox glass"><p>{e(p["intro"])}</p></div>' if p.get('intro') else ''}
 
   <div class="facts">
     <div class="fact glass"><span>Voraussetzung</span><b>{e(p['voraussetzung'])}</b></div>
