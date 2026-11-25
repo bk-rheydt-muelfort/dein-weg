@@ -267,7 +267,7 @@ footer a{color:var(--text)}
 .panel h2{font-size:1.3rem;font-weight:500;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
 .panel ul{margin:0;padding-left:0;list-style:none}
 .panel li{padding:8px 0 8px 28px;position:relative;border-bottom:1px solid rgba(255,255,255,.06)}
-.panel li::before{content:"^";position:absolute;left:4px;top:8px;color:var(--c);transform:rotate(90deg) scaleX(1.4)}
+.panel li::before{content:"›";position:absolute;left:6px;top:6px;color:var(--c);font-weight:700}
 .next{padding:24px;border:1px solid var(--c);background:color-mix(in srgb,var(--c) 14%,rgba(22,28,62,.6))}
 .next h2{color:var(--c)}
 .next a{color:var(--white);font-weight:700}
@@ -332,7 +332,7 @@ ANMELDUNG_STEPS = """<div class="regstep"><div class="n">1</div><div><h3>Online 
 
 def anmeldung(extra=""):
     return f"""<section id="anmeldung" class="alt"><div class="wrap">
-  <span class="eyebrow"><span class="chev">^</span>Anmeldung</span>
+  <span class="eyebrow">Anmeldung</span>
   <h2 class="display">So meldest du dich an</h2>
   <div class="reg" style="margin-top:28px">
     <div>
@@ -350,7 +350,7 @@ def anmeldung(extra=""):
 
 
 KONTAKT = """<section id="kontakt"><div class="wrap">
-  <span class="eyebrow"><span class="chev">^</span>Kontakt</span>
+  <span class="eyebrow">Kontakt</span>
   <h2 class="display">Dein Weg beginnt hier.</h2>
   <p class="lead">Wir beraten dich gern – auch direkt an deiner Schule.</p>
   <div class="contact">
@@ -396,7 +396,7 @@ def index():
                 preload="schueler-gruppe") \
         + header('<a href="#schule">Unsere Schule</a><a href="#infotag">Infotag</a><a href="#praesentation">Präsentation</a><a href="#kontakt">Kontakt</a>') + f"""
 <section class="hero">{hero_bg("schueler-gruppe")}<div class="wrap">
-  <span class="eyebrow"><span class="chev">^</span>Berufskolleg Rheydt-Mülfort · Mönchengladbach</span>
+  <span class="eyebrow">Berufskolleg Rheydt-Mülfort · Mönchengladbach</span>
   <h1 class="display">Dein Weg.<br>Dein Abschluss.</h1>
   <h2 class="q">Mit welchem Schulabschluss kommst du zu uns?</h2>
   <p class="qsub">Wähle deinen Abschluss – oder den, den du im Sommer bekommst.</p>
@@ -411,7 +411,7 @@ def index():
 
 {INFOTAG}
 <section id="schule"><div class="wrap">
-  <span class="eyebrow"><span class="chev">^</span>Wer wir sind</span>
+  <span class="eyebrow">Wer wir sind</span>
   <h2 class="display">Berufskolleg für Wirtschaft und Verwaltung</h2>
   <p class="lead">In Mönchengladbach – mitten zwischen Schule und Beruf.</p>
   <div class="cards3">
@@ -423,7 +423,7 @@ def index():
 </div></section>
 
 <section id="wege" class="alt"><div class="wrap">
-  <span class="eyebrow"><span class="chev">^</span>Entwicklungsmöglichkeiten</span>
+  <span class="eyebrow">Entwicklungsmöglichkeiten</span>
   <h2 class="display">Schritt für Schritt nach oben</h2>
   <p class="lead">Tippe auf eine Stufe, um mehr zu erfahren.</p>
   <div class="stairs">{stairs}</div>
@@ -431,7 +431,7 @@ def index():
 </div></section>
 
 <section id="berufe"><div class="wrap">
-  <span class="eyebrow"><span class="chev">^</span>Ausbildungsberufe</span>
+  <span class="eyebrow">Ausbildungsberufe</span>
   <h2 class="display">Mit Abschluss in die Ausbildung</h2>
   <p class="lead">Als Berufsschule begleiten wir Azubis in diesen Berufen:</p>
   <div class="jobs">
@@ -444,7 +444,7 @@ def index():
 
 {anmeldung()}
 <section id="praesentation"><div class="wrap">
-  <span class="eyebrow"><span class="chev">^</span>Präsentation</span>
+  <span class="eyebrow">Präsentation</span>
   <h2 class="display">Die ganze Präsentation</h2>
   <p class="lead">Blättere durch alle Folien oder lade die Präsentation herunter.</p>
   <div class="viewer glass">
@@ -486,13 +486,13 @@ def berufe_html(p):
 def page(p):
     nxt = BY[p["next"]] if p["next"] else None
     next_link = f'<p style="margin-top:14px"><a href="{nxt["file"]}">Weiter: {e(nxt["name"])} ›</a></p>' if nxt else ""
-    back = '<a class="back" href="index.html"><span class="chev" style="transform:rotate(-90deg) scaleX(1.4)">^</span>Zur Startseite</a>'
+    back = '<a class="back" href="index.html">‹ Zur Startseite</a>'
     return head(f"{full_name(p)} – Berufskolleg Rheydt-Mülfort",
                 f"{p['name']} am Berufskolleg Rheydt-Mülfort: {p['claim']}", preload=p["bild"]) \
         + header('<a href="index.html">Startseite</a><a href="#infotag">Infotag</a><a href="#kontakt">Kontakt</a>') + f"""
 <section class="bg-hero" style="--c:{p['color']}">{hero_bg(p['bild'])}<div class="wrap">
   {back}
-  <span class="eyebrow"><span class="chev">^</span>Bildungsangebot · {e(p['kurz'])}</span>
+  <span class="eyebrow">Bildungsangebot · {e(p['kurz'])}</span>
   <h1 class="display">{e(p['name'])}</h1>
   {f'<p class="alias">{e(p["alias"])}</p>' if p['alias'] else ''}
   <p class="claim">{e(p['claim'])}</p>
