@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schulberater – Berufskolleg Rheydt-Mülfort</title>
+<meta name="description" content="In drei Schritten zum passenden Bildungsgang am Berufskolleg Rheydt-Mülfort: Abschluss wählen, Bildungsgang finden, anmelden.">
+<meta name="theme-color" content="#123b37">
+<link rel="stylesheet" href="assets/style.css?v=2">
+</head>
+<body class="home">
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="header solo-head">
+  <div class="wrap">
+    <a class="logo" href="https://www.berufskolleg.biz" aria-label="Berufskolleg Rheydt-Mülfort – Schulhomepage"><img src="assets/logo-hell.png" alt="Berufskolleg Rheydt-Mülfort für Wirtschaft und Verwaltung" width="655" height="217"></a>
+    <a class="btn btn-dark" href="https://www.berufskolleg.biz/schuelerinnen-und-schueler/anmeldung/">Anmeldung</a>
+  </div>
+</header>
+<main id="inhalt" class="advisor">
+  <section class="adv-head"><div class="wrap">
+    <img class="sb-logo" src="assets/img/logo-schulberater.webp" alt="Schulberater „Dein Weg“" width="900" height="297">
+    <h1>Welcher Bildungsgang passt zu dir?</h1>
+    <ol class="steps" aria-label="Fortschritt">
+      <li data-step="1" class="on"><b>1</b> Dein Abschluss</li>
+      <li data-step="2"><b>2</b> Dein Bildungsgang</li>
+      <li data-step="3"><b>3</b> Anmeldung</li>
+    </ol>
+  </div></section>
+
+  <section class="wrap adv-body">
+    <div id="s1" class="panel">
+      <h2 tabindex="-1">Mit welchem Abschluss kommst du zu uns?</h2>
+      <ul class="opts"><li><button type="button" class="opt" data-id="kein"><strong>Noch keinen Abschluss</strong><span>Schulpflicht in der Sekundarstufe I erfüllt</span></button></li><li><button type="button" class="opt" data-id="esa"><strong>Erster Schulabschluss (HS9)</strong><span>früher: Hauptschulabschluss nach Klasse 9</span></button></li><li><button type="button" class="opt" data-id="eesa"><strong>Erweiterter Erster Schulabschluss (HS10)</strong><span>früher: Hauptschulabschluss nach Klasse 10</span></button></li><li><button type="button" class="opt" data-id="msa"><strong>Mittlerer Schulabschluss (FOR)</strong><span>Fachoberschulreife (Realschulabschluss) oder Versetzung in die Oberstufe am Gymnasium</span></button></li><li><button type="button" class="opt" data-id="neu"><strong>Neu in Deutschland</strong><span>ab 16 Jahren, du lernst noch Deutsch</span></button></li><li><button type="button" class="opt" data-id="azubi"><strong>Ich habe einen Ausbildungsplatz</strong><span>kaufmännische Ausbildung</span></button></li><li><button type="button" class="opt" data-id="beruf"><strong>Abgeschlossene Ausbildung</strong><span>und du willst dich weiterbilden</span></button></li></ul>
+      <noscript><ul class="plain"><li><a href="https://www.berufskolleg.biz/ausbildungsvorbereitung/">Noch keinen Abschluss → Ausbildungsvorbereitung</a></li><li><a href="https://www.berufskolleg.biz/handelsschule-bfs1/">Erster Schulabschluss (HS9) → Handelsschule (BFS1)</a></li><li><a href="https://www.berufskolleg.biz/handelsschule-bfs2/">Erweiterter Erster Schulabschluss (HS10) → Handelsschule (BFS2)</a></li><li><a href="https://www.berufskolleg.biz/hoehere-handelsschule/">Mittlerer Schulabschluss (FOR) → Höhere Handelsschule</a></li><li><a href="https://www.berufskolleg.biz/internationale-foerderklassen/">Neu in Deutschland → Internationale Förderklassen</a></li><li><a href="https://www.berufskolleg.biz/industriekaufleute/">Ich habe einen Ausbildungsplatz → Berufsschule</a></li><li><a href="https://www.berufskolleg.biz/fachschule-fuer-wirtschaft/">Abgeschlossene Ausbildung → Fachschule für Wirtschaft</a></li></ul></noscript>
+    </div>
+
+    <div id="s2" class="panel" hidden>
+      <button type="button" class="back" data-go="1">← Anderen Abschluss wählen</button>
+      <h2 tabindex="-1">Das passt zu dir:</h2>
+      <article class="result">
+        <div class="r-main">
+          <span class="r-from"></span>
+          <h3 class="r-name"></h3>
+          <p class="r-expect"></p>
+          <ul class="checks r-points"></ul>
+          <div class="r-subj"><h4>Deine Fächer</h4><div class="r-sg"></div></div>
+          <p class="r-then muted"></p>
+          <p class="r-extra muted small"></p>
+          <div class="r-berufe" hidden><h4>Welchen Beruf lernst du?</h4><ul class="r-blist"></ul></div>
+        </div>
+        <dl class="r-facts">
+          <div><dt>Abschluss</dt><dd class="r-goal"></dd></div>
+          <div><dt>Dauer</dt><dd class="r-dauer"></dd></div>
+          <div><dt>Standort</dt><dd>Kirschhecke 10</dd></div>
+        </dl>
+      </article>
+      <div class="btns"><a class="btn btn-soft r-more" href="#"><span class="arrow">Alle Infos zum Bildungsgang</span></a><button type="button" class="btn btn-primary" data-go="3"><span class="arrow">Weiter zur Anmeldung</span></button></div>
+    </div>
+
+    <div id="s3" class="panel" hidden>
+      <button type="button" class="back" data-go="2">← Zurück zum Bildungsgang</button>
+      <h2 tabindex="-1">So meldest du dich an</h2>
+      <ol class="reg"></ol>
+      <aside class="infotag">
+        <span class="tag">Infotag</span>
+        <h3>Samstag, 13. Februar 2027</h3>
+        <p>Lerne uns vorher kennen: Bildungsgänge, Lehrkräfte und Schule live erleben. Komm einfach vorbei – Kirschhecke 10.</p>
+      </aside>
+      <p class="muted small">Fragen? Sekretariat: 02166 917920 · <a href="mailto:info@berufskolleg.biz">info@berufskolleg.biz</a></p>
+    </div>
+  </section>
+</main>
+<footer class="footer solo-foot">
+  <div class="wrap">
+    <div class="legal">
+      <span>© 2026 Berufskolleg Rheydt-Mülfort · Kirschhecke 10 · 41199 Mönchengladbach · <a href="tel:+492166917920">02166 917920</a></span>
+      <span><a href="https://www.berufskolleg.biz">www.berufskolleg.biz</a> · <a href="https://www.berufskolleg.biz/impressum/">Impressum</a> · <a href="https://www.berufskolleg.biz/datenschutzerklaerung/">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+
+const D={"choices": [{"id": "kein", "label": "Noch keinen Abschluss", "hint": "Schulpflicht in der Sekundarstufe I erfüllt", "slug": "ausbildungsvorbereitung", "name": "Ausbildungsvorbereitung", "goal": "Erster Schulabschluss (früher HS9)", "dauer": "1 Jahr", "points": ["3 Tage Praktikum (Mo–Mi), 2 Tage Schule (Do + Fr)", "Intensive Begleitung durch die Schulsozialarbeit", "Hilfe bei Berufswahl und Praktikumssuche"], "then": "Danach: Handelsschule (BFS1) oder direkt in eine Ausbildung.", "reg": "voll", "expect": "In der Ausbildungsvorbereitung arbeitest du an drei von fünf Wochentagen in einem Praktikum und lernst kaufmännische Berufe von innen kennen. Gleichzeitig kannst du den Hauptschulabschluss nach Klasse 9 erwerben. Viele ehemalige Schülerinnen und Schüler finden so einen Ausbildungsplatz.", "subjects": [["Berufsbezogen", ["Geschäftsprozesse", "Personalbezogene Prozesse", "Mathematik", "Englisch"]], ["Berufsübergreifend", ["Deutsch / Kommunikation", "Politik / Gesellschaftslehre", "Religion"]]]}, {"id": "esa", "label": "Erster Schulabschluss (HS9)", "hint": "früher: Hauptschulabschluss nach Klasse 9", "slug": "handelsschule-bfs1", "name": "Handelsschule (BFS1)", "goal": "Erweiterter Erster Schulabschluss (früher HS10)", "dauer": "1 Jahr", "points": ["Kaufmännische Grundlagen in kleinen Klassen", "30 Praktikumstage, vor allem im Einzelhandel", "Enge Zusammenarbeit mit der Agentur für Arbeit"], "then": "Danach: Handelsschule (BFS2) zum Mittleren Schulabschluss oder eine Ausbildung.", "reg": "voll", "expect": "Mit dem Erweiterten Ersten Schulabschluss und einer Bescheinigung über berufliche Kenntnisse verbesserst du deine Chancen auf dem Ausbildungsmarkt. Im 30-tägigen Praktikum lernst du kaufmännische Berufe kennen, vor allem im Einzelhandel.", "subjects": [["Berufsbezogen", ["Geschäftsprozesse", "Personalbezogene Prozesse", "Mathematik", "Englisch"]], ["Berufsübergreifend", ["Deutsch / Kommunikation", "Religionslehre", "Sport / Gesundheit", "Politik / Gesellschaftslehre"]], ["Differenzierung", ["Kaufmännisches Rechnen", "Projektkurs"]]]}, {"id": "eesa", "label": "Erweiterter Erster Schulabschluss (HS10)", "hint": "früher: Hauptschulabschluss nach Klasse 10", "slug": "handelsschule-bfs2", "name": "Handelsschule (BFS2)", "goal": "Mittlerer Schulabschluss (FOR)", "dauer": "1 Jahr", "points": ["Mittlerer Schulabschluss plus berufliche Kenntnisse", "Mit guten Noten: Berechtigung für die Oberstufe", "30 Praktikumstage im kaufmännischen Bereich"], "then": "Danach: Höhere Handelsschule (Fachhochschulreife) oder eine Ausbildung.", "reg": "voll", "expect": "Mit dem Mittleren Schulabschluss und einer Bescheinigung über berufliche Kenntnisse verbesserst du deine Chancen auf dem Ausbildungsmarkt in besonderem Maße. Mit guten Noten erwirbst du zusätzlich die Berechtigung zur gymnasialen Oberstufe.", "subjects": [["Berufsbezogen", ["Geschäftsprozesse", "Gesamtwirtschaftliche Prozesse", "Personalbezogene Prozesse", "Mathematik", "Englisch"]], ["Berufsübergreifend", ["Deutsch / Kommunikation", "Religionslehre", "Sport / Gesundheit", "Politik / Gesellschaftslehre"]], ["Differenzierung", ["Kaufmännisches Rechnen", "Verkaufskunde"]]]}, {"id": "msa", "label": "Mittlerer Schulabschluss (FOR)", "hint": "Fachoberschulreife (Realschulabschluss) oder Versetzung in die Oberstufe am Gymnasium", "slug": "hoehere-handelsschule", "name": "Höhere Handelsschule", "goal": "Fachhochschulreife (schulischer Teil)", "dauer": "2 Jahre", "points": ["BWL mit Rechnungswesen, Deutsch, Mathe, Englisch", "Differenzierung nach Wahl: Spanisch, Englisch oder Gesundheitscoaching", "Betriebspraktikum am Ende des ersten Jahres"], "then": "Danach: Studium an einer Fachhochschule oder eine Ausbildung mit Vorsprung.", "reg": "voll", "extra": "Für die Anmeldung brauchst du einen tabellarischen Lebenslauf und eine Kopie deines letzten Zeugnisses. Es gibt eine schriftliche Beratungsprüfung in Deutsch, Englisch und Mathe.", "expect": "Anhand realitätsnaher betriebswirtschaftlicher Situationen erwirbst du fundiertes Wirtschaftswissen. Das verbessert deine Chancen auf einen attraktiven Ausbildungsplatz und schafft die schulischen Voraussetzungen für ein Fachhochschulstudium.", "subjects": [["Berufsbezogen", ["BWL mit Rechnungswesen", "Volkswirtschaftslehre", "Informationswirtschaft", "Mathematik", "Physik", "Englisch"]], ["Berufsübergreifend", ["Deutsch / Kommunikation", "Religionslehre", "Sport / Gesundheit", "Politik / Gesellschaftslehre"]], ["Differenzierung (eins nach Wahl)", ["Spanisch", "Englisch", "Gesundheitscoaching"]], ["Förderunterricht", ["Deutsch", "Mathematik", "Englisch", "BWL"]]]}, {"id": "neu", "label": "Neu in Deutschland", "hint": "ab 16 Jahren, du lernst noch Deutsch", "slug": "internationale-foerderklassen", "name": "Internationale Förderklassen", "goal": "vergleichbar Erster Schulabschluss (HS9)", "dauer": "1–2 Jahre", "points": ["Deutsch lernen, auch die Fachsprache", "Mathe, Englisch und kaufmännische Fächer", "Zwei Wochen Praktikum und Berufsorientierung"], "then": "Danach: ein weiterer Bildungsgang am Berufskolleg oder eine Ausbildung.", "reg": "if", "expect": "Die Internationalen Förderklassen sind für neu zugewanderte Jugendliche ab 16 Jahren, die zum ersten Mal eine deutschsprachige Schule besuchen. Im Mittelpunkt stehen Deutschkenntnisse, auch in der Fachsprache, und berufliche Orientierung.", "subjects": [["Berufsbezogen", ["Mathematik", "Englisch", "Geschäftsprozesse", "Personalbezogene Prozesse", "Gesamtwirtschaftliche Prozesse"]], ["Berufsübergreifend", ["Deutsch / Kommunikation", "Politik / Gesellschaftslehre", "Religionslehre", "Sport / Gesundheit"]], ["Differenzierung", ["Mathe-Förderung", "Alltagswissen"]]]}, {"id": "azubi", "label": "Ich habe einen Ausbildungsplatz", "hint": "kaufmännische Ausbildung", "slug": null, "name": "Berufsschule", "goal": "Berufsabschluss + Berufsschulabschluss", "dauer": "2–3 Jahre", "points": ["Unterricht an 1–2 Tagen pro Woche, sonst im Betrieb", "Fächer passend zu deinem Beruf", "Abschlussprüfung vor der IHK"], "then": "Danach: Fachschule für Wirtschaft bis zum Bachelor Professional.", "reg": "bs", "berufe": [["Industriekaufleute", "https://www.berufskolleg.biz/industriekaufleute/"], ["Groß- und Außenhandelsmanagement", "https://www.berufskolleg.biz/gross-und-aussenhandelskaufleute/"], ["Kaufleute für Büromanagement", "https://www.berufskolleg.biz/kaufleute-fuer-bueromanagement/"], ["Kaufleute im Einzelhandel", "https://www.berufskolleg.biz/einzelhandelskaufleute/"], ["Verkäuferinnen und Verkäufer", "https://www.berufskolleg.biz/verkaeuferinnen-und-verkaeufer/"], ["Automobilkaufleute", "https://www.berufskolleg.biz/automobilkaufleute/"]], "expect": "Du lernst abwechselnd im Betrieb und bei uns. In der Berufsschule vertiefst du die Theorie zu deinem Beruf in Lernfeldern, die sich an echten Arbeitsabläufen orientieren, dazu kommen Deutsch, Politik, Religion und Sport.", "subjects": [["Für alle Berufe", ["Deutsch / Kommunikation", "Politik / Gesellschaftslehre", "Religionslehre", "Sport / Gesundheit", "Englisch"]], ["Je nach Beruf", ["Lernfelder deines Ausbildungsberufs"]]]}, {"id": "beruf", "label": "Abgeschlossene Ausbildung", "hint": "und du willst dich weiterbilden", "slug": "fachschule-fuer-wirtschaft", "name": "Fachschule für Wirtschaft", "goal": "Bachelor Professional", "dauer": "6–8 Semester", "points": ["Berufsbegleitend: Di + Do abends, Samstagvormittag", "Schwerpunkt Personalwirtschaft, inklusive Ausbildereignung", "Keine Semestergebühren"], "then": "Danach: Führungsaufgaben im mittleren Management.", "reg": "fs", "extra": "Voraussetzung: einschlägige Ausbildung, Berufsschulabschluss, Fachoberschulreife und ein Jahr Berufstätigkeit (auch begleitend) – oder fünf Jahre Berufserfahrung.", "expect": "Die Fachschule baut auf Ausbildung und Berufserfahrung auf und bereitet auf Führungsaufgaben im mittleren Management vor. Mit dem Schwerpunkt Personalwirtschaft und inklusive Ausbildereignung. Es fallen keine Semestergebühren an.", "subjects": [["3./4. Semester", ["Personalwirtschaft", "BWL", "Wirtschaftsinformatik", "Rechnungswesen", "Deutsch", "Englisch", "Mathematik"]], ["5./6. Semester", ["Personalwirtschaft", "BWL", "Wirtschaftsinformatik", "Existenzgründung", "Englisch", "Mathematik"]], ["7./8. Semester", ["Personalwirtschaft", "BWL", "Rechnungswesen", "Wirtschafts- und Arbeitsrecht", "Finanzwirtschaft", "VWL", "Mathematik"]]]}], "reg": {"voll": [["Online bewerben", "Über <a href=\"https://www.schulbewerbung.de\">schulbewerbung.de</a> mit dem Startcode deiner jetzigen Schule. Ohne Startcode kannst du dich dort neu registrieren."], ["Unterlagen abgeben", "Das ausgedruckte, unterschriebene Anmeldeformular und die Einwilligung zum Datenschutz im Sekretariat abgeben. <a href=\"https://www.berufskolleg.biz/schuelerinnen-und-schueler/anmeldung/\">Alle Infos und Formulare zur Anmeldung</a>"]], "bs": [["Anmeldung durch den Betrieb", "Dein Ausbildungsbetrieb meldet dich an: über <a href=\"https://www.schulbewerbung.de\">schulbewerbung.de</a> oder mit dem Anmeldeformular. <a href=\"https://www.berufskolleg.biz/schuelerinnen-und-schueler/anmeldung/\">Zum Anmeldeformular</a>"], ["Erster Schultag", "Bring eine Kopie des Ausbildungsvertrags und deines letzten Zeugnisses mit. Die Einschulungstermine stehen auf der Schulhomepage."]], "if": [["Beratung bei der KI", "Die Aufnahme läuft über die Kommunale Integrationsstelle der Stadt Mönchengladbach: Fliethstraße 90, Telefon 02161 25-53784, ki@moenchengladbach.de."], ["Schulplatz", "Die KI vermittelt dich an unser Berufskolleg und begleitet die Anmeldung."]], "fs": [["Anmelden ab Februar", "Mit dem Anmeldeformular der Fachschule, Lebenslauf und Nachweisen im Sekretariat. <a href=\"https://www.berufskolleg.biz/schuelerinnen-und-schueler/anmeldung/\">Zum Anmeldeformular</a>"], ["Start nach den Sommerferien", "Die Einschulung ist am letzten Tag der Sommerferien."]]}, "old": {"ausbildungsvorbereitung": "https://www.berufskolleg.biz/ausbildungsvorbereitung/", "handelsschule-bfs1": "https://www.berufskolleg.biz/handelsschule-bfs1/", "handelsschule-bfs2": "https://www.berufskolleg.biz/handelsschule-bfs2/", "hoehere-handelsschule": "https://www.berufskolleg.biz/hoehere-handelsschule/", "internationale-foerderklassen": "https://www.berufskolleg.biz/internationale-foerderklassen/", "industriekaufleute": "https://www.berufskolleg.biz/industriekaufleute/", "gross-und-aussenhandel": "https://www.berufskolleg.biz/gross-und-aussenhandelskaufleute/", "bueromanagement": "https://www.berufskolleg.biz/kaufleute-fuer-bueromanagement/", "einzelhandel": "https://www.berufskolleg.biz/einzelhandelskaufleute/", "verkaeufer": "https://www.berufskolleg.biz/verkaeuferinnen-und-verkaeufer/", "automobilkaufleute": "https://www.berufskolleg.biz/automobilkaufleute/", "fachschule-fuer-wirtschaft": "https://www.berufskolleg.biz/fachschule-fuer-wirtschaft/"}};
+let cur=null;
+const $=s=>document.querySelector(s);
+function show(n){
+  [1,2,3].forEach(i=>{document.getElementById('s'+i).hidden=i!==n;const li=document.querySelector('.steps [data-step="'+i+'"]');li.classList.toggle('on',i<=n);if(i===n)li.setAttribute('aria-current','step');else li.removeAttribute('aria-current')});
+  const h=document.querySelector('#s'+n+' h2');h.focus({preventScroll:true});
+  document.querySelector('.adv-head').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+}
+function pick(id){
+  cur=D.choices.find(c=>c.id===id);
+  $('.r-from').textContent='Mit „'+cur.label+'“';
+  $('.r-name').textContent=cur.name;
+  $('.r-goal').textContent=cur.goal;$('.r-dauer').textContent=cur.dauer;
+  $('.r-expect').textContent=cur.expect;
+  $('.r-sg').innerHTML=cur.subjects.map(([g,xs])=>'<p class="sg">'+g+'</p><ul class="tags">'+xs.map(x=>'<li>'+x+'</li>').join('')+'</ul>').join('');
+  $('.r-points').innerHTML=cur.points.map(p=>'<li>'+p+'</li>').join('');
+  $('.r-then').textContent=cur.then;$('.r-extra').textContent=cur.extra||'';
+  const b=$('.r-berufe');b.hidden=!cur.berufe;
+  if(cur.berufe)$('.r-blist').innerHTML=cur.berufe.map(([n,s])=>'<li><a href="'+s+'">'+n+'</a></li>').join('');
+  const more=$('.r-more');more.hidden=!cur.slug;if(cur.slug)more.href=D.old[cur.slug];
+  $('.reg').innerHTML=D.reg[cur.reg].map(([t,x])=>'<li><h3>'+t+'</h3><p>'+x+'</p></li>').join('');
+  show(2);
+}
+document.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>pick(b.dataset.id)));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>show(+b.dataset.go)));
+</script>
+</body>
+</html>
